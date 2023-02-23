@@ -23,3 +23,11 @@ jobs:
     displayName: 'Install dependencies'
 
   - script: bash <(curl -s https://copilot.blackducksoftware.com/ci/azure/scripts/upload)
+     -
+      task: JavaToolInstaller@0
+      inputs:
+        versionSpec: '8'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
+     -
+      script: bash <(curl -s https://copilot-test.blackducksoftware.com/ci/azure/scripts/upload)
